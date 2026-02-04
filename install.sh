@@ -11,6 +11,7 @@ swiftc notify.swift -o $BINARY_NAME
 echo "🔧 Installing to $INSTALL_PATH..."
 sudo cp $BINARY_NAME $INSTALL_PATH/$BINARY_NAME
 sudo chmod +x $INSTALL_PATH/$BINARY_NAME
+sudo codesign --sign - --force $INSTALL_PATH/$BINARY_NAME
 
 echo "✅ Installation complete!"
 echo ""

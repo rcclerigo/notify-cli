@@ -12,6 +12,7 @@ install: build
 	@echo "Installing to $(INSTALL_PATH)..."
 	cp $(BINARY_NAME) $(INSTALL_PATH)/$(BINARY_NAME)
 	chmod +x $(INSTALL_PATH)/$(BINARY_NAME)
+	codesign --sign - --force $(INSTALL_PATH)/$(BINARY_NAME)
 	@echo "Installed successfully!"
 
 clean:
