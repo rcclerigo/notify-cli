@@ -8,11 +8,10 @@ build:
 	swiftc notify.swift -o $(BINARY_NAME)
 	@echo "Build complete: ./$(BINARY_NAME)"
 
-install: build
+install:
 	@echo "Installing to $(INSTALL_PATH)..."
-	cp $(BINARY_NAME) $(INSTALL_PATH)/$(BINARY_NAME)
+	cp notify.swift $(INSTALL_PATH)/$(BINARY_NAME)
 	chmod +x $(INSTALL_PATH)/$(BINARY_NAME)
-	codesign --sign - --force $(INSTALL_PATH)/$(BINARY_NAME)
 	@echo "Installed successfully!"
 
 clean:
